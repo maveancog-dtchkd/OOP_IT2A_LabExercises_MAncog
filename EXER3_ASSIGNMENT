@@ -1,0 +1,48 @@
+
+public class Student {
+    
+    private String name;
+    private String course;
+    private int age;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCourse(String course) {
+        this.age = age;
+    }
+
+    public void setAge(int age) {
+        this.course = course;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
+    public String getAge() {
+        return age;
+    }
+}
+
+public class StudentTesrter {
+    public static void main(String[] args) {
+        
+        Student student1 = new Student();
+
+      
+        student1.setName("Mave Ancog");
+        student1.setCourse("Information Technology");
+        student1.setAge(19);
+
+   
+        System.out.println("Student Name: " + student1.getName());
+        System.out.println("Student Course: " + student1.getCourse());
+        System.out.println("Student Age: " + student1.getAge());
+    }
+}
