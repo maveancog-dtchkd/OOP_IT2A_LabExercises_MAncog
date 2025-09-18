@@ -9,6 +9,6 @@
                                        |   Food   |                                            | Drink |                                                      | Dessert |
                                        ------------                                            ---------                                                      -----------
                                             |                                                      |                                                               |
-                                            ├── Burger                                         ├── Soda                                                       ├── IceCream                                         ├── SUV                                                         └── Ship                                              
+                                            ├── Burger                                         ├── Soda                                                       ├── IceCream                                                                         
                                             └── Pizza                                          └── Juice                                                      └── Cake
                                                                                                   
