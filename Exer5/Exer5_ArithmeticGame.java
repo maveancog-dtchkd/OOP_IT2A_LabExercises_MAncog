@@ -27,7 +27,7 @@ public class ArithmeticGame extends JFrame {
 
     public ArithmeticGame() {
 
-        // ======== FRAME LOOK ========
+        // frame
         setTitle("💜 Purple Arithmetic Game");
         setSize(520, 430);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,14 +38,12 @@ public class ArithmeticGame extends JFrame {
         Color pastelPurple = new Color(230, 210, 255); // very soft purple
         Color white = Color.WHITE;
 
-        // ============================
-        // ----- CUSTOM BUTTON UI -----
-        // ============================
+        //gui
         submitButton = createStyledButton("Submit", new Color(186, 85, 211));
         cancelButton = createStyledButton("Cancel", new Color(148, 0, 211));
         nextButton   = createStyledButton("Next", new Color(170, 70, 230));
 
-        // PANEL 3 (Settings)
+        // panel3, settings
         panel3 = new JPanel();
         panel3.setBorder(BorderFactory.createTitledBorder("⚙ Settings"));
         panel3.setLayout(new GridLayout(2, 4));
@@ -82,7 +80,7 @@ public class ArithmeticGame extends JFrame {
         panel3.add(level2Button);
         panel3.add(level3Button);
 
-        // PANEL 1 (Main Problem)
+        //panel1
         panel1 = new JPanel();
         panel1.setBorder(BorderFactory.createTitledBorder("🧮 Solve the Problem"));
         panel1.setLayout(new FlowLayout());
@@ -109,7 +107,7 @@ public class ArithmeticGame extends JFrame {
         panel1.add(correctLabel);
         panel1.add(incorrectLabel);
 
-        // PANEL 2 (Messages)
+        //pamel2, messages
         panel2 = new JPanel();
         panel2.setBorder(BorderFactory.createTitledBorder("💬 Messages"));
         panel2.setLayout(new BoxLayout(panel2, BoxLayout.Y_AXIS));
@@ -131,7 +129,7 @@ public class ArithmeticGame extends JFrame {
         add(panel1, BorderLayout.CENTER);
         add(panel2, BorderLayout.SOUTH);
 
-        // LISTENERS
+        //listenerskuno
         nextButton.addActionListener(e -> {
             generateProblem();
             userInputField.setText("");
@@ -145,7 +143,7 @@ public class ArithmeticGame extends JFrame {
             messageLabel.setText("Cancelled. Click Next for a new problem.");
         });
 
-        // Scrolling Text
+        //scrolling text
         scrollTimer = new Timer(300, e -> {
             scrollText = scrollText.substring(1) + scrollText.charAt(0);
             scrollingLabel.setText(scrollText);
@@ -155,7 +153,7 @@ public class ArithmeticGame extends JFrame {
         setVisible(true);
     }
 
-    // ---- Helper: Styled TextField ----
+    //helper
     private JTextField styledField(int size) {
         JTextField f = new JTextField(size);
         f.setEditable(false);
@@ -167,7 +165,7 @@ public class ArithmeticGame extends JFrame {
         return f;
     }
 
-    // ---- Helper: Beautiful Purple Buttons ----
+    //gandang buttons
     private JButton createStyledButton(String text, Color bg) {
         JButton btn = new JButton(text);
         btn.setForeground(Color.WHITE);
@@ -179,7 +177,7 @@ public class ArithmeticGame extends JFrame {
         return btn;
     }
 
-    // ---- Helper: Purple Radio Buttons ----
+    // radio buttons
     private JRadioButton createRadio(String text, boolean selected) {
         JRadioButton rb = new JRadioButton(text, selected);
         rb.setBackground(new Color(230, 210, 255));
@@ -187,7 +185,7 @@ public class ArithmeticGame extends JFrame {
         return rb;
     }
 
-    // LOGIC FUNCTIONS: SAME AS ORIGINAL
+    //logicfunctions
     private void generateProblem() {
         int min = 1, max = 100;
         if (level2Button.isSelected()) { min = 100; max = 200; }
