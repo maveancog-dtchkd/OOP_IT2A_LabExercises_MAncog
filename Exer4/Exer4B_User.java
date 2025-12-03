@@ -7,12 +7,12 @@ public class User {
         this.email = email;
     }
 
-    // Polymorphic Method (overridden in subclasses)
+    //overridden in subclasses
     public void accessSystem() {
         System.out.println(name + " is accessing the system.");
     }
 
-    // Overloaded method (method overloading)
+    //method overloading
     public void accessSystem(String time) {
         System.out.println(name + " accessed the system at: " + time);
     }
