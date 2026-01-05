@@ -7,7 +7,7 @@ public class ArithmeticGame extends JFrame {
     private JPanel panel1, panel2, panel3;
     private JTextField num1Field, num2Field, operatorLabel, userInputField;
     private JButton submitButton, cancelButton, nextButton;
-    private JLabel messageLabel, scrollingLabel, correctLabel, incorrectLabel;
+    private JLabel messageLabel, correctLabel, incorrectLabel;
     private JRadioButton addButton, subButton, mulButton, divButton;
     private JRadioButton level1Button, level2Button, level3Button;
     private ButtonGroup operatorGroup, levelGroup;
@@ -16,13 +16,12 @@ public class ArithmeticGame extends JFrame {
     private Random random = new Random();
     private int correctCount = 0, incorrectCount = 0;
     private String[] messages = {
-        "Slow lang, di ’to karera",
-        "Math genius ka pala eh, eto oh",
-        "Pag tama ’to, libre self-confidence",
-        "Hinga muna… tapos compute ulit",
-        "Math is fun daw, sabi ng teacher"
+        "Math is fun daw, sabi ng teacher",
+        "Slow lang, di 'to karera",
+        "Math genius ka pala eh",
+        "Pag tama 'to, libre self-confidence",
+        "Hinga muna… tapos compute ulit"
     };
-    
 
     public ArithmeticGame() {
         // frame
@@ -196,16 +195,9 @@ public class ArithmeticGame extends JFrame {
         messageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         messageLabel.setForeground(new Color(80, 40, 120));
 
-        scrollingLabel = new JLabel(scrollText);
-        scrollingLabel.setFont(new Font("Arial", Font.BOLD, 14));
-        scrollingLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        scrollingLabel.setForeground(new Color(120, 60, 160));
-
-        panel2.add(Box.createVerticalStrut(5));
+        panel2.add(Box.createVerticalStrut(10));
         panel2.add(messageLabel);
         panel2.add(Box.createVerticalStrut(10));
-        panel2.add(scrollingLabel);
-        panel2.add(Box.createVerticalStrut(5));
 
         add(panel3, BorderLayout.NORTH);
         add(panel1, BorderLayout.CENTER);
@@ -231,13 +223,6 @@ public class ArithmeticGame extends JFrame {
             userInputField.setText("");
             messageLabel.setText("Cancelled. Click Next for a new problem.");
         });
-
-        //scrolling text
-        scrollTimer = new Timer(300, e -> {
-            scrollText = scrollText.substring(1) + scrollText.charAt(0);
-            scrollingLabel.setText(scrollText);
-        });
-        scrollTimer.start();
 
         // Generate initial problem
         generateProblem();
